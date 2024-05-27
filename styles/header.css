@@ -1,0 +1,175 @@
+.cabecalho__menu-hamburguer{ /*Estilizando o menu hamburguer*/
+    width: 24px; /*Alterando largura*/
+    height: 24px; /*Alterando Altura*/
+    background-image: url("../img/Menu.svg"); /*Inserindo uma imagem*/
+    background-repeat: no-repeat; /*Não deixa a imagem repetir*/
+    background-position: center; /*Centralizar a imagem*/
+    display: inline-block; /*Inserindo como display inline block*/
+    cursor: pointer;
+
+}
+
+.cabecalho{
+    background-color: var(--branco);
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+}
+
+.container__imagem{
+    padding: 1em; /*1em ou 16px*/
+}
+
+.lista-menu{
+    display: none;
+    position: absolute;
+    top: 72px;
+    width: 60vw; /*Viewport - largura da tela*/
+    background-color: var(--branco);
+    list-style: none;
+    z-index: 9999;
+}
+
+.lista-menu__titulo{
+    color: var(--laranja);
+    padding: 1em;
+    font-weight: 700;
+}
+
+.lista-menu__item{
+    padding: 1em;
+}
+
+.lista-menu__item a{
+    color: var(--azul);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* Removendo o titulo alura books quando a tela for menor */
+.container__titulo{
+    display: none;
+}
+
+.opcoes{
+    display: none;
+}
+
+.container__texto{
+    display: none;
+}
+
+
+
+/* Media Queries */
+/* max-width = ideal para quando estamos fazendo o desktop-first */
+/* min-width = ideal para quando estamos fazendo o mobile-first */
+
+
+/* Tablet */
+@media screen and (min-width: 1024px){
+    .container__titulo, .container__tiulo--negrito{
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;
+    }
+
+    .container__titulo{
+        font-weight: 400;
+        display: block;
+    }
+
+    .container__titulo--negrito{
+        font-weight: 700;
+    }
+
+    /* ul criada quando a tela é maior */
+    .opcoes{
+        display: flex;
+    }
+
+    .opcoes__item{
+        padding: 1em;
+        text-transform: uppercase;
+    }
+
+    .opcoes__link{
+        text-decoration: none;
+        color: var(--black);
+    }
+
+    /* Classe criado no icone do coração, que desaparece quando a tela é maior */
+    .container__imagem-transparente{
+        display: none;
+    }
+
+    .cabecalho__menu-hamburguer{
+        display: none;
+    }
+
+    /* Inserindo um input no botãso categoria que quando selecionado, mostra a lista de opcoes */
+    .opcoes__botao:checked ~ .lista-menu{
+        display: block;
+    }
+
+    .lista-menu{
+        width: auto;
+    }
+
+    .opcoes__botao{
+        display: none;
+    }
+
+    .opções__item {
+    padding:2em 1em;
+    }
+
+    .lista-menu__item:hover{
+        background: var(--azul-degrade);
+    }
+
+    .lista-menu__item:hover>.lista-menu__link{
+    -webkit-text-fill-color: var(--branco);
+    text-decoration: none;
+    }
+}
+
+
+
+
+/* Desktop */
+
+@media screen and (min-width: 1728px){
+    
+    .container__link{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--black);
+    }
+
+    .cabecalho{
+        padding: 0 2em;
+    }
+
+    .opcoes {
+        margin-right: auto;
+    }
+
+    .container__texto{
+        display: block;
+    }
+
+    .lista-menu__item:hover{
+        background: var(--azul-degrade);
+    }
+
+    .lista-menu__item:hover>.lista-menu__link{
+    -webkit-text-fill-color: var(--branco);
+    text-decoration: none;
+    }
+}
